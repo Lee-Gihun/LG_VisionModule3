@@ -1,5 +1,4 @@
-#mkdir -p ./data
-#mkdir -p ./data/VOC
+mkdir -p ./data
 
 #wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
 #wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
@@ -15,16 +14,17 @@
 
 #mv ./VOCdevkit ./data/VOC
 
-#python ./datasetting_voc.py
+wget https://www.dropbox.com/s/cg9bjfk52h1h8l7/VOC.zip?dl=0
+wget https://www.dropbox.com/s/emjqpg6wfhp1qfn/WeaponData.zip?dl=0
 
-#wget https://www.dropbox.com/s/emjqpg6wfhp1qfn/WeaponData.zip?dl=0
+mv ./VOC.zip?dl=0 ./VOC.zip
+unzip ./VOC.zip
+mv ./VOC ./data
+rm ./VOC.zip
+python ./datasetting_voc.py
 
-#mv ./WeaponData.zip?dl=0 ./WeaponData.zip
-
-#unzip ./WeaponData.zip
-
-#mv ./Weapon ./data
-
-#rm ./WeaponData.zip
-
+mv ./WeaponData.zip?dl=0 ./WeaponData.zip
+unzip ./WeaponData.zip
+mv ./Weapon ./data
+rm ./WeaponData.zip
 python ./datasetting_weapon.py
