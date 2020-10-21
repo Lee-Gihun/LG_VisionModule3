@@ -15,16 +15,27 @@ mkdir -p ./data
 #mv ./VOCdevkit ./data/VOC
 
 wget https://www.dropbox.com/s/cg9bjfk52h1h8l7/VOC.zip?dl=0
-wget https://www.dropbox.com/s/emjqpg6wfhp1qfn/WeaponData.zip?dl=0
+
+sleep 3
 
 mv ./VOC.zip?dl=0 ./VOC.zip
 unzip ./VOC.zip
 mv ./VOC ./data
 rm ./VOC.zip
+
+sleep 3
+
 python ./datasetting_voc.py
+
+wget https://www.dropbox.com/s/emjqpg6wfhp1qfn/WeaponData.zip?dl=0
+
+sleep 3
 
 mv ./WeaponData.zip?dl=0 ./WeaponData.zip
 unzip ./WeaponData.zip
 mv ./Weapon ./data
 rm ./WeaponData.zip
+
+sleep 3
+
 python ./datasetting_weapon.py
