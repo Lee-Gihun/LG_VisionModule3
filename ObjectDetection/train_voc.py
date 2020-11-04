@@ -19,7 +19,7 @@ dataset = PascalVOCDataset(data_folder='./data/VOC', split='TRAIN')
 dataloader = DataLoader(dataset=dataset, batch_size=8, shuffle=True, 
                               collate_fn=dataset.collate_fn, num_workers=4)
 
-model = DetectionNet(n_classes=20, unfreeze_keys='all', use_bias=True).to(device)
+model = DetectionNet(n_classes=21, unfreeze_keys='all', use_bias=True).to(device)
 criterion = MultiBoxLoss(priors_cxcy=create_prior_boxes(), threshold=0.5, neg_pos_ratio=0.3, alpha=1.0)
 
 num_epochs = 40
